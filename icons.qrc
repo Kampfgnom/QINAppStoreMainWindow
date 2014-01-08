@@ -1,1 +1,6 @@
-<RCC/>
+<RCC>
+    <qresource prefix="/icons">
+        <file alias="icon_h">close_issue_button_highlighted.png</file>
+        <file alias="icon">close_issue_button.png</file>
+    </qresource>
+</RCC>

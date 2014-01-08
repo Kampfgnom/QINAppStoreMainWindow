@@ -3,9 +3,7 @@
 
 #include <QMainWindow>
 
-namespace Ui {
-class QINAppStoreMainWindow;
-}
+class QMacNativeWidget;
 
 class QINAppStoreMainWindow : public QMainWindow
 {
@@ -14,9 +12,14 @@ class QINAppStoreMainWindow : public QMainWindow
 public:
     explicit QINAppStoreMainWindow(QWidget *parent = 0);
     ~QINAppStoreMainWindow();
+    void addTitleBarAction(QAction *action, int x, int y);
+
+public slots:
+    void setVisible(bool visible) Q_DECL_OVERRIDE;
 
 private:
-    Ui::QINAppStoreMainWindow *ui;
+    void *m_windowHandle;
+    QMacNativeWidget *nativeWidget;
 };
 
 #endif // QINAPPSTOREMAINWINDOW_H
